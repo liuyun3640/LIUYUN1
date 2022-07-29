@@ -33,4 +33,6 @@ JS分为同步任务和异步任务
 渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/18298598/178404206-e1ed5378-35e3-487f-aeef-1a6814ae2e49.png">
 <img width="791" alt="企业微信截图_5d84e7d2-36ec-482d-9742-a821374bdc5c" src="https://user-images.githubusercontent.com/18298598/178404249-29fc7772-69d3-475c-b83d-77b9315b0ccf.png">
+<h2>Promise</h2>
+<p>Promise.catch()</p>
 
