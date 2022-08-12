@@ -34,5 +34,14 @@ JS分为同步任务和异步任务
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/18298598/178404206-e1ed5378-35e3-487f-aeef-1a6814ae2e49.png">
 <img width="791" alt="企业微信截图_5d84e7d2-36ec-482d-9742-a821374bdc5c" src="https://user-images.githubusercontent.com/18298598/178404249-29fc7772-69d3-475c-b83d-77b9315b0ccf.png">
 <h2>Promise</h2>
-<p>Promise.catch()</p>
+<p>1.Promise.catch() 是promise 在rejected状态下执行的回调，当then里有.then(sus, fail)的时候执行fail不再执行catch</p>
+<p>2.Promise.any 返回第一个状态最先置成fullfill的promise，参数是[]空数组时，状态时rejected</p>
+<p> Promise.race是返回第一个状态改变的promise，不管事fullfill还是rejected， 参数是[]时，状态一直是penddign</p>
+<p>3.Promise.finally  Promise.resolve(2).then(() => 77, () => {}),返回的promise value是77</p>
+<p> Promise.resolve(2).finally(() => 77) ，返回value是 2； 当finally函数里没有表示reject的操作时，是透传上个promise的的状态（resolve和reject）和返回值</p>
+<p>但是Promise.reject(3).finally(() => {throw 99}) and Promise.reject(3).finally(() => Promise.reject(99)) 是返回99</p>
+<p>4.Promise.resolve 看一下有重点 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve</p>
+<p>5.Promise.then 有nextTick简单实现 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then（没看懂）</p>
+<p>6.Promise.all 等全部fullfile 返回；或者第一个reject返回，进入catch, 参数是[]时返回 fulfilled 的空数组； Promise.allSettled 等所有的promise状态都返改变,参数是[]时返回状态是fulfilled的空数组[]</p>
+
 
